@@ -1,0 +1,365 @@
+/* ===================================
+   DESIGN IS FUNNY - STYLES
+   =================================== */
+
+/* === BASE STYLES === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --cream: #F5F1E8;
+    --dark: #1a1a1a;
+    --accent: #FF6B35;
+}
+
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    background-color: var(--cream);
+    color: var(--dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* === NAVIGATION === */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    background-color: rgba(245, 241, 232, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.nav-links {
+    display: flex;
+    gap: 3rem;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--dark);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: opacity 0.3s;
+}
+
+.nav-links a:hover {
+    opacity: 0.6;
+}
+
+/* === ABOUT SECTION === */
+.about-section {
+    padding: 12rem 3rem 2rem 3rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+.about-text h2 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    line-height: 1.3;
+    margin-bottom: 2rem;
+}
+
+.about-text h2 .italic {
+    font-style: italic;
+    font-weight: 600;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+}
+
+.about-text a {
+    color: var(--dark);
+    text-decoration: underline;
+}
+
+.about-images {
+    display: grid;
+    gap: 2rem;
+}
+
+.about-images img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/6.75;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.buffa-note {
+    font-size: 1rem;
+    margin-top: 2rem;
+    font-style: italic;
+    opacity: 0.7;
+}
+
+/* === WORK SECTION (ARTIST LIST) === */
+.work-section {
+    padding: 3rem 3rem;
+    background-color: var(--dark);
+    color: var(--cream);
+}
+
+.artists-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.artists-list {
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    font-weight: 500;
+    line-height: 1.6;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem 1.5rem;
+}
+
+.artist-item {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.artist-item:hover {
+    color: var(--cream);
+}
+
+/* Artist hover colors - Edit these to change the hover colors */
+.artist-item[data-hover-color="orange"]:hover {
+    color: #FF6B35;
+}
+
+.artist-item[data-hover-color="blue"]:hover {
+    color: #4A90E2;
+}
+
+.artist-item[data-hover-color="pink"]:hover {
+    color: #FF6B9D;
+}
+
+.artist-item[data-hover-color="yellow"]:hover {
+    color: #FFD93D;
+}
+
+.artist-item[data-hover-color="green"]:hover {
+    color: #6BCF7F;
+}
+
+.artist-item[data-hover-color="purple"]:hover {
+    color: #9B6BFF;
+}
+
+.artist-item[data-hover-color="red"]:hover {
+    color: #FF5C5C;
+}
+
+.separator {
+    color: rgba(245, 241, 232, 0.4);
+    user-select: none;
+}
+
+.artist-info {
+    position: absolute;
+    bottom: -1.8rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.7rem;
+    font-weight: 400;
+    line-height: 1.3;
+    max-width: 90vw;
+    width: max-content;
+    min-width: 150px;
+    text-align: center;
+    padding: 0.5rem 0.8rem;
+    background: rgba(26, 26, 26, 0.9);
+    backdrop-filter: blur(10px);
+    border-radius: 4px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    color: rgba(245, 241, 232, 0.95);
+    z-index: 100;
+    white-space: normal;
+}
+
+.artist-item:hover .artist-info {
+    opacity: 1;
+}
+
+/* Secondary Artist List */
+.secondary-section-header {
+    font-size: 1rem;
+    font-weight: 400;
+    color: rgba(245, 241, 232, 0.6);
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    font-style: italic;
+}
+
+.artists-list-secondary {
+    font-size: clamp(0.7rem, 2vw, 1.4rem);
+    font-weight: 400;
+    line-height: 1.3;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.3rem 0.75rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.artist-item-small {
+    display: inline-block;
+    color: var(--cream);
+}
+
+/* === CONTACT SECTION === */
+.contact-section {
+    padding: 4rem 3rem;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 4rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+}
+
+.contact-section h2 .italic {
+    font-style: italic;
+    font-weight: 600;
+}
+
+.contact-email {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.contact-email a {
+    color: var(--dark);
+    text-decoration: none;
+    border-bottom: 2px solid var(--dark);
+    transition: opacity 0.3s;
+}
+
+.contact-email a:hover {
+    opacity: 0.6;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.social-links a {
+    color: var(--dark);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: opacity 0.3s;
+}
+
+.social-links a:hover {
+    opacity: 0.6;
+}
+
+.shop-link {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: var(--dark);
+    color: var(--cream);
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    transition: opacity 0.3s;
+}
+
+.shop-link:hover {
+    opacity: 0.8;
+}
+
+/* === FOOTER === */
+footer {
+    padding: 3rem;
+    text-align: center;
+    border-top: 1px solid rgba(26, 26, 26, 0.1);
+}
+
+footer .social-links {
+    margin-bottom: 1.5rem;
+}
+
+footer p {
+    font-size: 0.9rem;
+    opacity: 0.6;
+}
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 968px) {
+    nav {
+        padding: 1.5rem 2rem;
+    }
+
+    .nav-links {
+        gap: 1.5rem;
+    }
+
+    .about-section,
+    .work-section,
+    .contact-section {
+        padding: 4rem 2rem;
+    }
+
+    .contact-section h2 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .nav-links {
+        gap: 1rem;
+        font-size: 0.8rem;
+    }
+
+    .about-text h2 {
+        font-size: 1.8rem;
+    }
+
+    .about-text p {
+        font-size: 1rem;
+    }
+}
